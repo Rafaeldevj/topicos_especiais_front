@@ -1,5 +1,5 @@
 import axios from 'axios'
 
 export const http = axios.create({
-    baseURL: 'http://localhost:8000/api'
+    baseURL: 'https://fast-tor-43250.herokuapp.com/api'
 });
