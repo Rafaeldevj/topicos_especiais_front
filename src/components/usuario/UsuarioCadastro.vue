@@ -82,9 +82,9 @@
                             </b-form-group>
                         </div>
                     </div>
-                    <b-button type="submit" variant="primary"><i class="fas fa-save"></i> Salvar</b-button>
+                    <b-button id="salvar_btn" type="submit" variant="primary"><i class="fas fa-save"></i> Salvar</b-button>
                     &nbsp;
-                    <b-button type="reset" variant="danger"><i class="fas fa-eraser"></i> Novo cadastro</b-button>
+                    <b-button id="novo_usuario_btn" type="reset" variant="danger"><i class="fas fa-eraser"></i> Novo cadastro</b-button>
 
                 </b-form>
             </b-card-text>

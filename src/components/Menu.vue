@@ -10,11 +10,11 @@
                 <li class="nav-item" v-for="(item, index) in menu" :key="index">
                     <div v-if="item.permissao == 1">
                         <div v-if="permissao == 1">
-                            <router-link class="nav-link" :to="item.caminho"><i :class="item.icone"></i> {{ item.nome }}</router-link>
+                            <router-link :id="item.id" class="nav-link" :to="item.caminho"><i :class="item.icone"></i> {{ item.nome }}</router-link>
                         </div>
                     </div>
                     <div v-else>
-                        <router-link class="nav-link" :to="item.caminho"><i :class="item.icone"></i> {{ item.nome }}</router-link>
+                        <router-link :id="item.id" class="nav-link" :to="item.caminho"><i :class="item.icone"></i> {{ item.nome }}</router-link>
                     </div>
                 </li>
             </b-navbar-nav>
@@ -25,8 +25,8 @@
                 <b-nav-item-dropdown right>
                     <!-- Using 'button-content' slot -->
                     <template slot="button-content"><i class="fas fa-user"></i> &nbsp;{{ this.$store.state.usuario.nm_usuario }}</template>
-                    <b-dropdown-item @click="navegar('perfil')"><i class="fas fa-user-cog"></i> &nbsp;Perfil</b-dropdown-item>
-                    <b-dropdown-item @click="logout"><i class="fas fa-sign-out-alt"></i> &nbsp; Sair</b-dropdown-item>
+                    <b-dropdown-item id="sair_perfil" @click="navegar('perfil')"><i class="fas fa-user-cog"></i> &nbsp;Perfil</b-dropdown-item>
+                    <b-dropdown-item id="sair_btn" @click="logout"><i class="fas fa-sign-out-alt"></i> &nbsp; Sair</b-dropdown-item>
                 </b-nav-item-dropdown>
             </b-navbar-nav>
             </b-collapse>
@@ -41,9 +41,9 @@ export default {
             nome_usuario: '',
             permissao: null,
             menu: [
-                { caminho: '/painel/inicio', icone: 'fas fa-home', nome: 'Inicio', permissao: 0 },
-                { caminho: '/painel/usuario_cadastro', icone: 'fas fa-user-plus', nome: 'Cadastro de Usuário', permissao: 1 },
-                { caminho: '/painel/usuario_listagem', icone: 'fas fa-list', nome: 'Listagem de Usuários', permissao: 1 }
+                { id: "inicio_menu_btn", caminho: '/painel/inicio', icone: 'fas fa-home', nome: 'Inicio', permissao: 0 },
+                { id: "usuario_cadastro_btn", caminho: '/painel/usuario_cadastro', icone: 'fas fa-user-plus', nome: 'Cadastro de Usuário', permissao: 1 },
+                { id: "usuario_listagem_btn", caminho: '/painel/usuario_listagem', icone: 'fas fa-list', nome: 'Listagem de Usuários', permissao: 1 }
             ]
         }
     },
